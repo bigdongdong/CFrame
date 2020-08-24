@@ -1,0 +1,15 @@
+<resources>
+
+    <!--dialog 渐变弹出动画-->
+    <style name="dialog_alpha_animation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_alpha_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_alpha_out</item>
+    </style>
+
+    <!--dialog 底部弹出动画-->
+    <style name="dialog_bottom_animation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_bottom_out</item>
+    </style>
+
+</resources>
