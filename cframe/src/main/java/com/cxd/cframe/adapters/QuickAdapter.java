@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,7 +84,7 @@ public abstract class QuickAdapter<Bean> extends RecyclerView.Adapter<QuickAdapt
 
     protected abstract Object getItemViewOrId();
 
-    protected abstract void onBindViewHolder(ViewHolder holder, Bean bean, int position) ;
+    protected abstract void onBindViewHolder(@NotNull ViewHolder holder, Bean bean, int position) ;
     @NonNull
     @Override
     public  ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -106,7 +108,7 @@ public abstract class QuickAdapter<Bean> extends RecyclerView.Adapter<QuickAdapt
     }
 
     @Override
-    public void onBindViewHolder(QuickAdapter.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NotNull QuickAdapter.ViewHolder viewHolder, int i) {
         if(isEmpty == false){ //避免空布局时走了onBindViewHolder，此时list为null，获取不到bean，会出空指针异常
             onBindViewHolder(viewHolder,getBean(i),i);
         }
