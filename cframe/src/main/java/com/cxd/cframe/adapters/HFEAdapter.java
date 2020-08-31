@@ -7,8 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -110,7 +108,7 @@ public abstract class HFEAdapter<Bean,VH extends RecyclerView.ViewHolder> extend
      * @param bean
      * @param position 除去header和footer之后的position
      */
-    protected abstract void onBindViewHolder(@NotNull VH holder, Bean bean , int position);
+    protected abstract void onBindViewHolder(VH holder, Bean bean , int position);
 
     @NonNull
     @Override

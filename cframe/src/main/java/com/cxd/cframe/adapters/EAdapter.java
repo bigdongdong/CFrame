@@ -7,8 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,7 +78,7 @@ public abstract class EAdapter<Bean,VH extends RecyclerView.ViewHolder> extends 
 
     protected abstract VH onCreateViewHolder( int itemType ,ViewGroup viewGroup);
 
-    protected abstract void onBindViewHolder(@NotNull VH holder, Bean bean , int position);
+    protected abstract void onBindViewHolder(VH holder, Bean bean , int position);
 
     @NonNull
     @Override
@@ -99,7 +97,7 @@ public abstract class EAdapter<Bean,VH extends RecyclerView.ViewHolder> extends 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int i) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
         if(isEmpty == false){
             onBindViewHolder((VH)holder,listData.get(i) , i);
         }
