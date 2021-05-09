@@ -10,6 +10,6 @@
   }
   
   dependencies {
-	  implementation 'com.github.bigdongdong:CFrame:{$lastestVersion}' //添加依赖
+	  implementation 'com.github.bigdongdong:CFrame:${lastestVersion}' //添加依赖
   }
 ```
