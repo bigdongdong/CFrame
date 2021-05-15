@@ -5,7 +5,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
-public abstract class BaseEmptyAdapter extends RecyclerView.Adapter {
+abstract class BaseEmptyAdapter extends RecyclerView.Adapter {
     private final String TAG = "BaseEmptyAdapterTAG" ;
     @Override
     public void onAttachedToRecyclerView(@NonNull RecyclerView recycler) {

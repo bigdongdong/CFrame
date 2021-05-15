@@ -20,6 +20,7 @@ import com.cxd.cframe.R;
  * 自带渐变阴影的popupwindow
  * 默认阴影透明度是50%，渐变动画持续200ms
  */
+@Deprecated
 public abstract class ShadowPopupWindow extends PopupWindow {
     protected final String TAG = "ShadowPopWindow_TAG";
 
