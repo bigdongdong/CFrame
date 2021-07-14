@@ -10,7 +10,7 @@
     >
 
     <com.cxd.cframe.layout.RelativeLayout
-        android:tag="#CCECCC,100dp"
+        android:tag="100dp,[↘,#CCECCC,#22111111,#fffffA]"
         android:layout_width="300dp"
         android:layout_height="200dp"
         />

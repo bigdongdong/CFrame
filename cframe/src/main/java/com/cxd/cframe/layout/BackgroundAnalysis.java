@@ -16,7 +16,7 @@ class BackgroundAnalysis {
     private final String TAG = "BackgroundAnalysis";
 
     public BackgroundAnalysis(Context context,AttributeSet attrs) {
-        /*从attrs中取出android:background*/
+        /*从attrs中取出android:tag*/
         TypedArray ta = context.obtainStyledAttributes(attrs, new int[] {android.R.attr.tag});
         String background = ta.getString(0);
         ta.recycle();
@@ -57,12 +57,12 @@ class BackgroundAnalysis {
             /*圆角*/
             if(str.contains("px")){
                 str = str.substring(0,str.length()-2) ;
-                gd.setCornerRadius(Float.valueOf(str));
+                gd.setCornerRadius(Float.parseFloat(str));
                 continue;
             }
             if(str.contains("dp")){
                 str = str.substring(0,str.length()-2) ;
-                gd.setCornerRadius(dip2px(view.getContext(),Float.valueOf(str)));
+                gd.setCornerRadius(dip2px(view.getContext(),Float.parseFloat(str)));
                 continue;
             }
         }
@@ -91,14 +91,14 @@ class BackgroundAnalysis {
 
                 for (int i = 0; i < 8; i++) {
                     String str = strs[i];
-                    if(str.equals(0)){
+                    if(str.equals("0")){
                         conners[i] = 0 ;
                     }else if(str.contains("px")){
                         str = str.substring(0,str.length()-2) ;
-                        conners[i] = Float.valueOf(str);
+                        conners[i] = Float.parseFloat(str);
                     }else if(str.contains("dp")){
                         str = str.substring(0,str.length()-2) ;
-                        conners[i] = dip2px(view.getContext(),Float.valueOf(str));
+                        conners[i] = dip2px(view.getContext(),Float.parseFloat(str));
                     }
                 }
                 gd.setCornerRadii(conners);
@@ -108,28 +108,28 @@ class BackgroundAnalysis {
 
             /*背景色渐变*/
             switch (firstElement){
-                case "ltr":
+                case "→":
                     gd.setOrientation(GradientDrawable.Orientation.LEFT_RIGHT);
                     break;
-                case "rtl":
+                case "←":
                     gd.setOrientation(GradientDrawable.Orientation.RIGHT_LEFT);
                     break;
-                case "ttb":
+                case "↓":
                     gd.setOrientation(GradientDrawable.Orientation.TOP_BOTTOM);
                     break;
-                case "btt":
+                case "↑":
                     gd.setOrientation(GradientDrawable.Orientation.BOTTOM_TOP);
                     break;
-                case "lttrb":
+                case "↘":
                     gd.setOrientation(GradientDrawable.Orientation.TL_BR);
                     break;
-                case "rttlb":
+                case "↙":
                     gd.setOrientation(GradientDrawable.Orientation.TR_BL);
                     break;
-                case "lbtrt":
+                case "↗":
                     gd.setOrientation(GradientDrawable.Orientation.BL_TR);
                     break;
-                case "rbtlt":
+                case "↖":
                     gd.setOrientation(GradientDrawable.Orientation.BR_TL);
                     break;
                 default:
