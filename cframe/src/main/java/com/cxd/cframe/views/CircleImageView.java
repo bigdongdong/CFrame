@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.util.AttributeSet;
 
-public class CircleImageView extends android.support.v7.widget.AppCompatImageView {
+public class CircleImageView extends androidx.appcompat.widget.AppCompatImageView {
     private int mWidth , mHeight ;
 
     public CircleImageView(Context context, AttributeSet attrs) {

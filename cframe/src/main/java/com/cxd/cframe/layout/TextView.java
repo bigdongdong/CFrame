@@ -3,7 +3,7 @@ package com.cxd.cframe.layout;
 import android.content.Context;
 import android.util.AttributeSet;
 
-public class TextView extends android.support.v7.widget.AppCompatTextView {
+public class TextView extends androidx.appcompat.widget.AppCompatTextView {
     public TextView(Context context) {
         super(context,null);
     }
